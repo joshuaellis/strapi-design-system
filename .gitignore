@@ -5,3 +5,7 @@ node_modules
 yarn-debug.log*
 yarn-error.log*
 .idea
+
+dist
+src
+!strapi-design-system/src
