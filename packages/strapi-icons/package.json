@@ -6,7 +6,8 @@
   "sideEffects": false,
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c"
+    "build": "yarn generate:icons && rollup -c",
+    "generate:icons": "svgr --icon -d ./src ./assets/icons"
   },
   "peerDependencies": {
     "react": "^17.0.1",
