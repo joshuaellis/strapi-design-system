@@ -1,8 +1,23 @@
 {
   "name": "@strapi/design-system",
   "version": "1.2.4",
-  "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./": "./dist/"
+  },
   "peerDependencies": {
     "@strapi/icons": "^1.2.4",
     "react": "^17.0.1",
