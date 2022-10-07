@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import CarretDown from '@strapi/icons/CarretDown';
+import { CarretDown } from '@strapi/icons';
 import styled from 'styled-components';
 import { sizes } from '../themes/sizes';
 import { NumberFormatter, NumberParser } from '@internationalized/number';

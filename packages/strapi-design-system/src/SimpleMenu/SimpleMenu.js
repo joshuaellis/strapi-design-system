@@ -1,7 +1,7 @@
 import React, { useRef, useState, Children, cloneElement, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import CarretDown from '@strapi/icons/CarretDown';
+import { CarretDown } from '@strapi/icons';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '../Typography';
 import { Box } from '../Box';

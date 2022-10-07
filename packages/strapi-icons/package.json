@@ -1,8 +1,13 @@
 {
   "name": "@strapi/icons",
   "version": "1.2.4",
-  "main": "index.js",
-  "license": "MIT",
+  "type": "module",
+  "main": "./dist/strapi-icons.cjs",
+  "module": "./dist/strapi-icons.js",
+  "scripts": {
+    "build": "rimraf dist src && yarn generate:icons && vite build",
+    "generate:icons": "svgr --icon -d ./src ./assets/icons"
+  },
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"

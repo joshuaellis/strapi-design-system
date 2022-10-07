@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev": "lerna run dev",
     "analyze:bundle": "lerna run analyze:bundle --stream",
     "build": "lerna run build --stream --scope=@strapi/icons && lerna run build --stream --scope=@strapi/design-system",
     "setup": "yarn && lerna bootstrap",
@@ -25,7 +26,7 @@
     "test:snapshots": "lerna --scope @strapi/design-system exec -- yarn  test -u",
     "release": "lerna version --no-push --no-git-tag-version && yarn setup && git commit -am \"Releasing\" && lerna publish from-package --contents dist"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "@figspec/react": "^0.1.5",
     "@playwright/test": "1.20.0",
     "@specifyapp/cli": "^0.0.51",
@@ -37,6 +38,7 @@
     "@svgr/cli": "^5.5.0",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.5",
+    "@vitejs/plugin-react": "^2.1.0",
     "axe-playwright": "^1.1.11",
     "babel-jest": "^26.6.3",
     "chokidar-cli": "^3.0.0",
@@ -57,12 +59,13 @@
     "prettier": "^2.2.1",
     "qs": "^6.10.3",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",
-    "react-copy-to-clipboard": "^5.0.4",
     "storybook-dark-mode": "^1.0.9",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "vite": "^3.1.6"
   },
   "husky": {
     "hooks": {

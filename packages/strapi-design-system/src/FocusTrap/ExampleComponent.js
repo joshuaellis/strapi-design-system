@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import Cross from '@strapi/icons/Cross';
+import { Cross } from '@strapi/icons';
 import { Box } from '../Box';
 import { Stack } from '../Stack';
 import { Typography } from '../Typography';

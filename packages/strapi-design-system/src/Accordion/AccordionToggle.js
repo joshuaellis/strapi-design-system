@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import DropdownIcon from '@strapi/icons/CarretDown';
+import { CarretDown as DropdownIcon } from '@strapi/icons';
 import styled from 'styled-components';
 import { TextButton } from '../TextButton';
 import { Typography } from '../Typography';
