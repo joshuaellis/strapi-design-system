@@ -25,7 +25,7 @@
     "test:snapshots": "lerna --scope @strapi/design-system exec -- yarn  test -u",
     "release": "lerna version --no-push --no-git-tag-version && yarn setup && git commit -am \"Releasing\" && lerna publish from-package --contents dist"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "@figspec/react": "^0.1.5",
     "@playwright/test": "1.20.0",
     "@specifyapp/cli": "^0.0.51",
@@ -53,14 +53,15 @@
     "jest-styled-components": "^7.0.4",
     "lerna": "^4.0.0",
     "lint-staged": ">=10",
+    "parcel": "^2.7.0",
     "plop": "^2.7.4",
     "prettier": "^2.2.1",
     "qs": "^6.10.3",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",
-    "react-copy-to-clipboard": "^5.0.4",
     "storybook-dark-mode": "^1.0.9",
     "styled-components": "^5.2.1"
   },

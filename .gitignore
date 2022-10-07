@@ -9,3 +9,5 @@ yarn-error.log*
 src
 !strapi-design-system/src
 dist
+
+.parcel-cache
