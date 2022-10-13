@@ -25,7 +25,7 @@
     "test:snapshots": "lerna --scope @strapi/design-system exec -- yarn  test -u",
     "release": "lerna version --no-push --no-git-tag-version && yarn setup && git commit -am \"Releasing\" && lerna publish from-package --contents dist"
   },
-  "devDependencies": {    
+  "devDependencies": {
     "@figspec/react": "^0.1.5",
     "@playwright/test": "1.20.0",
     "@specifyapp/cli": "^0.0.51",
@@ -41,6 +41,7 @@
     "babel-jest": "^26.6.3",
     "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.15.10",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-mdx": "^1.17.0",
@@ -57,12 +58,13 @@
     "prettier": "^2.2.1",
     "qs": "^6.10.3",
     "react": "^17.0.1",
+    "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "rimraf": "^3.0.2",
-    "react-copy-to-clipboard": "^5.0.4",
     "storybook-dark-mode": "^1.0.9",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "tiny-glob": "^0.2.9"
   },
   "husky": {
     "hooks": {
