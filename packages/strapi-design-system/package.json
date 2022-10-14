@@ -21,6 +21,11 @@
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1"
   },
+  "peerDependenciesMeta": {
+    "react-router-dom": {
+      "optional": true
+    }
+  },
   "dependencies": {
     "@strapi/icons": "*",
     "@floating-ui/react-dom": "^1.0.0",
