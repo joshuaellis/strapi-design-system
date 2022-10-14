@@ -4,15 +4,19 @@ import resolve from '@rollup/plugin-node-resolve';
 
 import esbuild from 'rollup-plugin-esbuild';
 
+/**
+ * @type {import('rollup-plugin-esbuild').Options}
+ */
 const esbuildConfig = {
   minify: false,
+  target: 'es2020',
   loaders: {
     // Enable JSX in .js files too
     '.js': 'jsx',
   },
 };
 
-const extensions = ['.js', '.jsx'];
+const extensions = ['.js', '.jsx', '.cjs'];
 
 const sharedPlugins = [image(), resolve({ extensions }), esbuild(esbuildConfig)];
 
@@ -37,11 +41,16 @@ export default [
     input: ['src/**/*.js', 'src/**/*.jsx', '!src/index.js', '!**/__tests__', '!**/*.e2e.js', '!**/*.spec.js'],
     output: { dir: `dist`, format: 'cjs' },
     external,
-    plugins: [multiInput(), ...sharedPlugins],
+    plugins: [
+      multiInput({
+        transformOutputPath: (output) => output.replace(/\.[^/.]+$/, '.cjs'),
+      }),
+      ...sharedPlugins,
+    ],
   },
   {
     input: `./src/index.js`,
-    output: { file: `dist/index.cjs.js`, format: 'cjs' },
+    output: { file: `dist/index.cjs`, format: 'cjs' },
     external,
     plugins: sharedPlugins,
   },
