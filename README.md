@@ -1,68 +1,25 @@
-<p align="center">
-  <a href="https://strapi.io">
-    <img src="./assets/logo.svg" width="318px" alt="Strapi logo" />
-  </a>
-</p>
-<p align="center">
-<a style='margin-right:10px' href="https://design-system.strapi.io/">Documentation</a>|<a style='margin-left:10px' href="https://design-system-git-main-strapijs.vercel.app/">Try components</a></p>
-<br />
+# Welcome
 
-<p align="center">
-  <a href="https://www.npmjs.org/package/@strapi/design-system">
-    <img src="https://img.shields.io/npm/v/@strapi/design-system/latest.svg" alt="NPM Version" />
-  </a>
-    <img alt="Bundle Size" src="https://badgen.net/bundlephobia/minzip/@strapi/design-system"/>
-  <a href="https://github.com/strapi/design-system/actions/workflows/playwright-ci.yml">
-    <img src="https://github.com/strapi/design-system/actions/workflows/playwright-ci.yml/badge.svg" alt="Playwright tests" />
-  </a>
-  <a href="https://discord.strapi.io">
-    <img src="https://img.shields.io/discord/811989166782021633?label=Discord" alt="Strapi on Discord" />
-  </a>
-</p>
+This is a fork of `strapi/design-system` aimed at exploring different bundlers to improve bundle size across the application.
 
-# Welcome! 👋👋👋
+The branches are clearly labelled as the bundler they're experimenting with.
 
-Strapi Design System provides guidelines and tools to help anyone make Strapi's contributions more cohesive and to build plugins more efficiently.
+## Getting started
 
-## Installation
+- Select a branch you want to look (e.g. `esbuild`)
+- run `yarn setup` to install the dependencies of the repo
+- run `yarn build` to build the pacakge with the respected bundler
+- check out `dist` if you're interested in the output.
 
-Install Strapi Design System and its peer dependencies:
+## Connecting to `Strapi`
 
-```sh
-$ yarn add @strapi/design-system @strapi/icons styled-components
+If you want to analyze the admin bundle and the impact each library has on the over all application, link this repo to your copy of the `strapi` repo
+by replacing the version number of `@strapi/design-system` with a direct path like so:
 
-# or
-
-$ npm i @strapi/design-system @strapi/icons styled-components
+```shell
+# packages/core/admin/package.json
+"@strapi/design-system": "link:../../../../strapi-design-system/packages/strapi-design-system",
 ```
 
-## Usage
-
-Wrap your application with the `ThemeProvider` and pass the default `lightTheme` provided by `@strapi/design-system`.
-
-```jsx
-import { ThemeProvider } from "@strapi/design-system/ThemeProvider";
-import { lightTheme } from "@strapi/design-system/themes";
-
-function App({ children }) {
-  return <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>;
-}
-
-export default App;
-```
-
-## Testing a specific branch
-
-Make sure to have the project already cloned (see previous point). Then, run the following commands:
-
-```sh
-# Inside the folder
-$ git checkout BRANCH_NAME # BRANCH_NAME concerns the modifications to tests
-$ yarn setup # reinstall dependencies & prepare lerna packages
-```
-
-If you encounter problems doing so, run the following command and retry the previous one:
-
-```sh
-$ git reset --hard
-```
+This should be done to all instances of including in the `pacakge.json`. Running `yarn lerna clean && yarn setup` in the root of the strapi repo should
+connect these correctly.
