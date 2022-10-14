@@ -19,11 +19,11 @@ const commonConfig = {
   plugins: [externalNodeModsPlugin],
   loader: {
     '.js': 'jsx',
-    '.svg': 'text',
+    '.svg': 'copy',
   },
 };
 
-glob('./src/**/!(*.spec|*.e2e).{js}').then(async (paths) => {
+glob('./src/**/!(*.spec|*.e2e).{js,svg}').then(async (paths) => {
   try {
     esbuild.build({
       entryPoints: ['./src/index.js'],
