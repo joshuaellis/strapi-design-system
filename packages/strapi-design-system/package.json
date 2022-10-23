@@ -3,13 +3,14 @@
   "version": "1.2.4",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/strapi-design-system.cjs",
-  "module": "./dist/strapi-design-system.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/strapi-design-system.js",
-      "require": "./dist/strapi-design-system.cjs"
-    }
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./": "./dist/"
   },
   "scripts": {
     "dev": "vite",

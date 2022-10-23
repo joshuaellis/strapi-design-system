@@ -2,8 +2,15 @@
   "name": "@strapi/icons",
   "version": "1.2.4",
   "type": "module",
-  "main": "./dist/strapi-icons.cjs",
-  "module": "./dist/strapi-icons.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./": "./dist/"
+  },
   "scripts": {
     "build": "rimraf dist src && yarn generate:icons && vite build",
     "generate:icons": "svgr --icon -d ./src ./assets/icons"

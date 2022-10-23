@@ -65,6 +65,7 @@
     "rimraf": "^3.0.2",
     "storybook-dark-mode": "^1.0.9",
     "styled-components": "^5.2.1",
+    "tiny-glob": "^0.2.9",
     "vite": "^3.1.6"
   },
   "husky": {
